@@ -1,6 +1,8 @@
 use std::collections::HashMap;
 use std::fs;
 
+use num::integer;
+
 #[derive(Copy, Clone, Debug)]
 enum Direction {
     Left,
@@ -84,11 +86,8 @@ fn part2(input: &str) {
         .filter(|k| k.ends_with("A"))
         .map(|k| k.to_string())
         .collect();
-    let mut cycles = Vec::new();
-    for _ in 0..current.len() {
-        cycles.push(0)
-    }
-    for (idx, val) in current.iter().enumerate() {
+    let mut cycles: Vec<usize> = Vec::new();
+    for val in current.iter() {
         let mut inst = 0;
         let mut first_z = 0;
         let mut second_z = 0;
@@ -114,16 +113,14 @@ fn part2(input: &str) {
             steps += 1;
             inst += 1;
         }
-        cycles[idx] = second_z - first_z;
+        cycles.push(second_z - first_z);
     }
     println!(
         "part2: {}",
         cycles
-            .iter()
-            .map(|x| *x / instruction.instructions.len())
-            .reduce(|a, b| a * b)
+            .into_iter()
+            .reduce(|a, b| integer::lcm(a, b))
             .unwrap()
-            * instruction.instructions.len()
     )
 }
 
