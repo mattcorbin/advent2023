@@ -54,6 +54,7 @@ fn spin_inner(grid: Vec<Vec<char>>) -> Vec<Vec<char>> {
             }
         }
     }
+
     // West
     for x in 0..retval[0].len() {
         if x == 0 {
