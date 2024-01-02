@@ -201,14 +201,14 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        let input = fs::read_to_string("test.txt").expect("test1.txt should exist");
+        let input = fs::read_to_string("test.txt").expect("test.txt should exist");
         let map = Map::from(&input);
         assert_eq!(94, part1(&map));
     }
 
     #[test]
     fn test_p2() {
-        let input = fs::read_to_string("test.txt").expect("test1.txt should exist");
+        let input = fs::read_to_string("test.txt").expect("test.txt should exist");
         let map = Map::from(&input);
         assert_eq!(154, part2(&map));
     }

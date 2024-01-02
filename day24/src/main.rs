@@ -181,7 +181,7 @@ fn part2(snowballs: &Snowballs) -> usize {
 }
 
 fn main() {
-    let input = fs::read_to_string("input.txt").expect("input.dot should exist");
+    let input = fs::read_to_string("input.txt").expect("input.txt should exist");
     let mut snowballs = Snowballs::from(&input);
     snowballs.min = 200000000000000f64;
     snowballs.max = 400000000000000f64;
@@ -195,7 +195,7 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        let input = fs::read_to_string("test.txt").expect("test1.txt should exist");
+        let input = fs::read_to_string("test.txt").expect("test.txt should exist");
         let mut snowballs = Snowballs::from(&input);
         snowballs.min = 7f64;
         snowballs.max = 27f64;
@@ -204,7 +204,7 @@ mod tests {
 
     #[test]
     fn test_p2() {
-        let input = fs::read_to_string("test.txt").expect("test1.txt should exist");
+        let input = fs::read_to_string("test.txt").expect("test.txt should exist");
         let snowballs = Snowballs::from(&input);
         assert_eq!(47, part2(&snowballs));
     }

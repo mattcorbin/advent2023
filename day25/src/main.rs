@@ -37,6 +37,6 @@ fn part1(input: &str) -> usize {
 }
 
 fn main() {
-    let input = fs::read_to_string("input.txt").expect("input.dot should exist");
+    let input = fs::read_to_string("input.txt").expect("input.txt should exist");
     println!("{}", part1(&input));
 }
